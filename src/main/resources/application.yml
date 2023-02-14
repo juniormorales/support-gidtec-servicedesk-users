@@ -1,0 +1,32 @@
+spring:
+  cloud:
+    config:
+      enabled: false
+  application:
+    name: support-gidtec-servicedesk-users
+  data:
+    mongodb:
+      uri: mongodb+srv://juniormoralesbrenis:sj7EX9iTxHWKiXob@cluster0.arspgug.mongodb.net/gidtec-servicedesk-db?retryWrites=true&w=majority
+  main:
+    allow-bean-definition-overriding: true
+
+application:
+  openapi:
+    info:
+      title: Service Desk Users
+      description: Permite consultar, registrar, actualizar informacion de los usuarios
+      version: 1.0.0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+
+audit-properties:
+  status-code:
+    IN: INACTIVO
+    AC: ACTIVO
+
+server:
+  port: 8085
